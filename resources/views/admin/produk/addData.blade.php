@@ -36,6 +36,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="satuan" class="form-label">Satuan</label>
+                    <input type="text" class="form-control" id="satuan" name="satuan">
+                </div>
+
+                <div class="mb-3">
                     <label for="id_kategori" class="form-label">Kategori</label>
                     <div class="d-flex">
                         <select class="form-select" aria-label="Default select example" id="id_kategori" name="id_kategori">
@@ -89,6 +94,7 @@
             getSelect('id_kategori', '/kategori', 'nama_kategori',{{$data->id_kategori ?? null}})
             $('#formProduk #id').val('{{$data->id ?? null}}');
             $('#namaProduk').val('{{$data->nama_produk ?? null}}');
+            $('#satuan').val('{{$data->satuan ?? null}}');
             $('#stok').val('{{$data->stok ?? null}}');
             $('#harga').val('{{$data->harga ?? null}}');
             id = '{{request('id')}}'

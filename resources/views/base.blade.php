@@ -109,9 +109,9 @@
     </header>
     <main>
         <div class="content-wrapper">
-            <a class="tombol-wa" href="https://wa.me/send?phone=6289654649151">
+            {{-- <a class="tombol-wa" href="https://wa.me/send?phone=6289654649151">
                 <img src="{{ asset('static-image/WhatsApp.png') }}" />
-            </a>
+            </a> --}}
             @yield('content')
         </div>
     </main>

@@ -37,6 +37,7 @@ class ProdukController extends CustomController
             $field = \request()->validate(
                 [
                     'nama_produk' => 'required',
+                    'satuan' => 'required',
                     'deskripsi' => 'required',
                     'harga' => 'required',
                     'id_kategori' => 'required',

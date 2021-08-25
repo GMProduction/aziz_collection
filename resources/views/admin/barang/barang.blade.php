@@ -34,6 +34,9 @@
                         nama Barang
                     </th>
                     <th>
+                        Satuan
+                    </th>
+                    <th>
                         Jumlah
                     </th>
 

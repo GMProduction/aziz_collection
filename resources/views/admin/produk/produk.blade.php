@@ -31,6 +31,7 @@
                 <thead>
                 <th>#</th>
                 <th>nama Produk</th>
+                <th>Satuan</th>
                 <th>Kategori</th>
                 <th>Stok</th>
                 <th>Sisa Stok</th>
@@ -41,6 +42,7 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <td>{{$d->nama_produk}}</td>
+                        <td>{{$d->satuan}}</td>
                         <td>{{$d->getKategori->nama_kategori}}</td>
                         <td>{{$d->stok}}</td>
                         <td>{{$d->sisa}}</td>
