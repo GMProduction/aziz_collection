@@ -1,14 +1,14 @@
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   background-color: #f9fbfd;
 }
 
 .b-primary {
-  background-color: #39cbbb;
+  background-color: #1A1F95;
 }
 
 .bt-primary {
-  background-color: #39cbbb;
+  background-color: #1A1F95;
   border-radius: 50px;
   padding: 10px;
   margin-bottom: 10px;
@@ -34,7 +34,7 @@ body {
 }
 
 .t-primary {
-  color: #39cbbb !important;
+  color: #1A1F95 !important;
 }
 
 .t-white {
@@ -99,21 +99,20 @@ body {
 .item-box .totalHarga {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #39cbbb;
+  color: #1A1F95;
 }
 
-.   slider-kategori {
+.slider-kategori {
   padding: 16px;
 }
 
 .slider-kategori .card-kategori {
   all: unset;
-  /*height: 70px;*/
+  height: 70px;
   padding: 16px;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-    flex-direction: column !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -128,27 +127,21 @@ body {
 
 .slider-kategori .card-kategori .title {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
 }
 
 .slider-kategori .card-kategori img {
   border-radius: 15px;
-    /*border: 1px solid #cccccc;*/
   -o-object-fit: cover;
      object-fit: cover;
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
   margin-right: 10px;
 }
 
-.slider-kategori .card-kategori:hover  {
-  background-color: #39cbbb;
-    color: white;
-
-}
-.slider-kategori .card-kategori:hover img {
-    background-color: white;
+.slider-kategori .card-kategori:hover {
+  background-color: #1A1F95;
 }
 
 .slider img {
@@ -172,7 +165,7 @@ a .nav-link {
 
 .link {
   cursor: pointer;
-  color: #39cbbb;
+  color: #1A1F95;
 }
 
 .profile-userpic {
@@ -215,7 +208,6 @@ a .nav-link {
 .cardku:hover {
   -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: 3px solid red;
 }
 
 .cardku .slick-prev:before,
@@ -237,7 +229,7 @@ a .nav-link {
 .cardku .content .title {
   font-weight: 700;
   font-size: 1.2rem;
-  color: #39cbbb;
+  color: #1A1F95;
 }
 
 .cardku .content .date {
@@ -301,7 +293,7 @@ nav.navtop .icon-sosmed {
 }
 
 nav.navtop .icon-sosmed:hover {
-  fill: #39cbbb;
+  fill: #1A1F95;
   cursor: pointer;
 }
 
@@ -317,7 +309,7 @@ nav.navtop .nav-item a {
 }
 
 nav.navtop .nav-item a:hover {
-  color: #39cbbb !important;
+  color: #1A1F95 !important;
 }
 
 nav.navscrolled {
@@ -336,7 +328,7 @@ nav.navscrolled .icon-sosmed {
 }
 
 nav.navscrolled .icon-sosmed:hover {
-  fill: #39cbbb;
+  fill: #1A1F95;
   cursor: pointer;
 }
 
@@ -351,7 +343,7 @@ nav.navscrolled .nav-item a {
 }
 
 nav.navscrolled .nav-item a:hover {
-  color: #39cbbb !important;
+  color: #1A1F95 !important;
 }
 
 .table-container {
@@ -487,7 +479,7 @@ nav.navscrolled .nav-item a:hover {
 }
 
 .footerstyle .link:hover {
-  color: #39cbbb;
+  color: #1A1F95;
   cursor: pointer;
 }
 
@@ -499,7 +491,7 @@ nav.navscrolled .nav-item a:hover {
 }
 
 .footerstyle .icon-sosmed:hover {
-  fill: #39cbbb;
+  fill: #1A1F95;
   cursor: pointer;
 }
 
@@ -613,9 +605,9 @@ nav.navscrolled .nav-item a:hover {
 }
 
 .cta-select {
-  border: 2px solid #39cbbb;
+  border: 2px solid #1A1F95;
   background: transparent;
-  color: #39cbbb;
+  color: #1A1F95;
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -624,7 +616,7 @@ nav.navscrolled .nav-item a:hover {
 }
 
 .cta-add {
-  background: #39cbbb;
+  background: #1A1F95;
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -638,7 +630,7 @@ nav.navscrolled .nav-item a:hover {
 hr.divider {
   width: 5rem;
   height: 0.2rem;
-  color: #39cbbb;
+  color: #1A1F95;
   text-align: center;
   display: block;
   margin-left: auto;

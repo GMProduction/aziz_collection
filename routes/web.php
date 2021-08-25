@@ -38,6 +38,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+
+Route::get('/tentang-kami', function () {
+    return view('tentang');
+});
+
 Route::post('/login', [AuthController::class,'login']);
 Route::get('/logout', [AuthController::class,'logout']);
 Route::post('/register-member', [AuthController::class, 'registerMember']);

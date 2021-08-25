@@ -10,7 +10,7 @@
 
 
         <div class="slider">
-            <img src="{{$kategori ? $kategori->url_foto : 'https://lostvape.com/wp-content/uploads/2020/09/Z100A_01.jpg'}}" alt="img04"/>
+            <img src="{{$kategori ? $kategori->url_foto : asset('/static-image/banner.png')}}" alt="img04"/>
         </div>
         <div style="height: 50px"></div>
     </section>
