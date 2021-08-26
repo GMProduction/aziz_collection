@@ -36,7 +36,7 @@
 
                 <div class="col-5">
                     <div class="px-3 pt-2">
-                        <h4 class=" fw-bold mb-0"><span class="t-primary">{{$data->nama_produk}}</span></h4>
+                        <h4 class=" fw-bold mb-0"><span class="t-primary">{{$data->nama_produk}} / <span style="font-size: 0.8rem">{{$data->satuan}}</span></span></h4>
                         <h6>{{$data->getKategori->nama_kategori}}</h6>
                         <hr>
                         <div class="d-flex justify-content-between">

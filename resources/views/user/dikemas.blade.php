@@ -50,7 +50,7 @@
                         @forelse($d->getKeranjang as $k)
                             <tr class="item-box border-0 mt-1">
                                 <td class="border-0"><img src="{{count($k->getProduk->getImage) > 0 ? $k->getProduk->getImage[0]->url_foto : asset('/static-image/noimage.jpg')}}"/></td>
-                                <td class="border-0"><p class="title">{{$k->getProduk->nama_produk}}</p>
+                                <td class="border-0"><p class="title">{{$k->getProduk->nama_produk}} / <span style="font-size: 0.8rem">{{$k->getProduk->satuan}}</span></p>
                                     <p class="keterangan mb-0">{{$k->keterangan}}</p></td>
                                 <td class="border-0 text-center"><p class="qty">Rp. {{number_format($k->getProduk->harga,0)}}</p></td>
                                 <td class="border-0 text-center"><p class="qty">{{$k->qty}}</p></td>

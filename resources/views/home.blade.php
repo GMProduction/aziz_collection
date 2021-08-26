@@ -120,7 +120,7 @@
                             '                        <img\n' +
                             '                            src="' + foto + '"/>\n' +
                             '                        <div class="content">\n' +
-                            '                            <p class="title mb-0">' + value['nama_produk'] + '</p>\n' +
+                            '                            <p class="title mb-0">' + value['nama_produk'] + ' / <span style="font-size: 0.8rem">' + value['satuan'] +'</span></p>\n' +
                             '                            <p class="description mb-0">' + value['get_kategori']['nama_kategori'] + '</p>\n' +
                             '                            <p class="description mb-0">Rp. ' + value['harga'].toLocaleString() + '</p>\n' +
                             '\n' +

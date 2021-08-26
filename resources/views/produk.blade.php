@@ -25,7 +25,7 @@
                             <img
                                 src="{{count($d->getImage) > 0 ? $d->getImage[0]->url_foto : asset('/static-image/noimage.jpg')}}"/>
                             <div class="content">
-                                <p class="title mb-0">{{$d->nama_produk}}</p>
+                                <p class="title mb-0">{{$d->nama_produk}} / <span style="font-size: 0.8rem">{{$d->satuan}}</span></p>
                                 <p class="description mb-0">{{$d->getKategori->nama_kategori}}</p>
                                 <p class="description mb-0">Rp. {{number_format($d->harga,0)}}</p>
                             </div>

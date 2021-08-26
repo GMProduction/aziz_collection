@@ -15,7 +15,7 @@
                             <img src="{{count($d->getProduk->getImage) > 0 ? $d->getProduk->getImage[0]->url_foto : asset('/static-image/noimage.jpg')}}"/>
                             <div class="ms-4 flex-fill">
                                 <div class="d-flex justify-content-between">
-                                    <p class="title">{{$d->getProduk->nama_produk}}</p>
+                                    <p class="title">{{$d->getProduk->nama_produk}} / <span style="font-size: 0.8rem">{{$d->getProduk->satuan}}</span></p>
                                     <a class="d-block" style="cursor: pointer" data-id="{{$d->id}}" data-nama="{{$d->getProduk->nama_produk}}" id="deleteData">
                                         <i class='bx bx-trash'></i>
                                     </a>
