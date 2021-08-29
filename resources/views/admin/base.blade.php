@@ -97,13 +97,14 @@
             </li>
         </a>
 
-        <a href="/admin/grafig-barang" id="grafig-barang">
-            <li href="#" class="nav-link t-white">
-                <i class='bx bx-bar-chart-alt-2'></i>
-                <span class="mx-2">Barang Terjual</span>
-            </li>
-        </a>
-
+        @if(auth()->user()->roles == 'pimpinan')
+            <a href="/admin/grafig-barang" id="grafig-barang">
+                <li href="#" class="nav-link t-white">
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    <span class="mx-2">Barang Terjual</span>
+                </li>
+            </a>
+        @endif
         <a href="/logout" class="mt-auto">
             <li href="#" class="nav-link t-white">
                 <i class="bx bx-link-external"></i>

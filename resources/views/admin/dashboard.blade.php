@@ -28,7 +28,9 @@
                     <th>Tanggal Pesan</th>
                     <th>Total Harga</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    @if(auth()->user()->roles == 'admin')
+                        <th>Action</th>
+                    @endif
                 </tr>
                 </thead>
 
@@ -39,10 +41,13 @@
                         <td>{{date('d F Y', strtotime($d->tanggal_pesanan))}}</td>
                         <td>Rp. {{number_format($d->total_harga, 0)}}</td>
                         <td>{{$d->status_pesanan == 1 ? 'Menungu Konfirmasi' : ($d->status_pesanan == 2 ? 'Dikemas' : ($d->status_pesanan == 3 ? 'Dikirim' : ($d->status_pesanan == 4 ? 'Selesai' : ($d->status_pesanan === 5 ? 'Dikembalikan' : 'Menunggu Pembayaran' ))))}}</td>
-                        <td>
-                            <button type="button" class="btn btn-primary btn-sm" data-id="{{$d->id}}" id="detailData">Detail
-                            </button>
-                        </td>
+                        @if(auth()->user()->roles == 'admin')
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" data-id="{{$d->id}}" id="detailData">Detail
+                                </button>
+                            </td>
+                        @endif
+
                     </tr>
                 @empty
                     <tr>
@@ -89,7 +94,7 @@
                                     <div class="col-6">
                                         <div class="mb-3">
                                             <label for="dNamaPelanggan" class="form-label fw-bold">Detail Expedisi</label>
-                                            <p id="" class="mb-0">Expedisi : <span id="dExpedisi"></span> </p>
+                                            <p id="" class="mb-0">Expedisi : <span id="dExpedisi"></span></p>
                                             <p id="">Estimasi : <span id="dEstimasi"></span></p>
                                         </div>
                                         <p class="mb-0 fw-bold">Biaya</p>
@@ -193,7 +198,7 @@
             $.get('/admin/pesanan/' + idPesanan, function (data) {
                 console.log(data);
                 $('#dNamaPelanggan').html(data['get_pelanggan']['nama'])
-                $('#dChat').attr('href','https://wa.me/'+data['get_pelanggan']['no_hp'])
+                $('#dChat').attr('href', 'https://wa.me/' + data['get_pelanggan']['no_hp'])
                 $('#dAlamatPengirimanKota').html(data['get_expedisi']['nama_kota'] + ' - ' + data['get_expedisi']['nama_propinsi'])
                 $('#dAlamatPengiriman').html(data['alamat_pengiriman'])
                 $('#dtanggalPesanan').html(moment(data['tanggal_pesanan']).format('DD MMMM YYYY'))
@@ -203,8 +208,8 @@
                 $('#dTotal').html(data['total_harga'].toLocaleString())
                 $('#dBuktiTransfer').attr('href', data['url_pembayaran'])
                 $('#dBuktiTransfer img').attr('src', data['url_pembayaran'])
-                $('#dExpedisi').html(data['get_expedisi']['nama'].toUpperCase()+' ( '+data['get_expedisi']['service']+' )')
-                $('#dEstimasi').html(data['get_expedisi']['estimasi']+' Hari')
+                $('#dExpedisi').html(data['get_expedisi']['nama'].toUpperCase() + ' ( ' + data['get_expedisi']['service'] + ' )')
+                $('#dEstimasi').html(data['get_expedisi']['estimasi'] + ' Hari')
                 var status = data['status_pesanan'];
                 var txtStatus = 'Menunggu Pembayaran';
                 $('#btnKonfirmasi').addClass('d-none')
@@ -213,18 +218,18 @@
                 if (status === 1) {
                     $('#btnKonfirmasi').removeClass('d-none')
                     txtStatus = 'Menunggu Konfirmasi'
-                }else if(status === 2){
+                } else if (status === 2) {
                     $('#btnKirim').removeClass('d-none')
                     txtStatus = 'Dikemas'
-                }else if(status === 3){
+                } else if (status === 3) {
                     txtStatus = 'Dikirim'
-                    if(data['get_retur'] && data['get_retur']['status'] === 0){
+                    if (data['get_retur'] && data['get_retur']['status'] === 0) {
                         txtStatus = 'Minta Retur'
                         $('#dAlasan').html(data['get_retur']['alasan'])
                     }
-                }else if(status === 4){
+                } else if (status === 4) {
                     txtStatus = 'Selesai'
-                }else if(status === 5){
+                } else if (status === 5) {
                     txtStatus = 'Dikembalikan'
                     $('#dAlasan').html(data['get_retur']['alasan'])
                 }
@@ -252,14 +257,14 @@
             var title = 'Tolak Pembayaran'
             if (a === 2) {
                 title = 'Terima Pembayaran'
-            }else if(a === 3){
+            } else if (a === 3) {
                 title = 'Kirim Pesanan'
             }
             var form_data = {
-                'status' : a,
-                '_token' : '{{csrf_token()}}'
+                'status': a,
+                '_token': '{{csrf_token()}}'
             };
-            saveDataObject(title,form_data,'/admin/pesanan/'+idPesanan,getDetail)
+            saveDataObject(title, form_data, '/admin/pesanan/' + idPesanan, getDetail)
             return false;
 
         }
