@@ -16,13 +16,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+//        DB::table('users')->insert([
+//            'nama' => 'Admin',
+//            'username' => 'admin',
+//            'roles' => 'admin',
+//            'alamat' => 'solo',
+//            'no_hp' => '0123456',
+//            'password' => Hash::make('admin'),
+//        ]);
         DB::table('users')->insert([
-            'nama' => 'Admin',
-            'username' => 'admin',
-            'roles' => 'admin',
+            'nama' => 'Pimpinan',
+            'username' => 'pimpinan',
+            'roles' => 'pimpinan',
             'alamat' => 'solo',
             'no_hp' => '0123456',
-            'password' => Hash::make('admin'),
+            'password' => Hash::make('pimpinan'),
         ]);
     }
 }

@@ -20,7 +20,17 @@
             <h4 class="mb-5 text-center fw-bold">Produk {{request('kategori')}} Yang Kami Punya</h4>
             <div class="row">
                 @forelse($data as $d)
+
+                    @php
+                        $stok = $d->sisa;
+                        $txtStok = 'Habis';
+                        if($stok > 0){
+                            $txtStok = "Stok : $stok";
+                        }
+                    @endphp
+
                     <div class="col-lg-3">
+                        <span class="spanStok">{{$txtStok}}</span>
                         <a class="cardku" href="/produk/detail/{{$d->id}}">
                             <img
                                 src="{{count($d->getImage) > 0 ? $d->getImage[0]->url_foto : asset('/static-image/noimage.jpg')}}"/>

@@ -42,7 +42,7 @@
                         <div class="d-flex justify-content-between">
                             <h4 class="mb-0 fw-bold t-yellow">Rp. {{number_format($data->harga, 0)}}</h4>
                         </div>
-                        <p class="mb-0 fw-bold">Sisa Stok : {{$data->sisa}}</p>
+                        <p class="mb-0 fw-bold">Sisa Stok : {{$data->sisa == 0 ? 'Habis' : $data->sisa}}</p>
                         <form id="form" onsubmit="return savePesanan()">
                             @csrf
                             <label for="qty" class="form-label mt-3">Jumlah Pembelian</label><br>

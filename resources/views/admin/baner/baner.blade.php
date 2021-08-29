@@ -88,7 +88,7 @@
         $('#tambahkategori #id').val('')
         $('#tambahkategori #url_web').val('')
         $('#tambahkategori #url_gambar').val('')
-        $('#tambahkategori #imgKate').attr('src','')
+        $('#tambahkategori #imgKate').attr('src','').addClass('d-none')
 
         $('#tambahkategori').modal('show')
     })
@@ -97,7 +97,7 @@
         $('#tambahkategori #id').val($(this).data('id'))
         $('#tambahkategori #url_web').val($(this).data('link'))
         $('#tambahkategori #url_gambar').val('')
-        $('#tambahkategori #imgKate').attr('src',$(this).data('image'))
+        $('#tambahkategori #imgKate').attr('src',$(this).data('image')).removeClass('d-none')
         $('#tambahkategori').modal('show')
     })
 

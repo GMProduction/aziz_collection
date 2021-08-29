@@ -87,7 +87,7 @@
             $('#tambahkategori #id').val('')
             $('#tambahkategori #nama_kategori').val('')
             $('#tambahkategori #url_foto').val('')
-            $('#tambahkategori #imgKate').attr('src','')
+            $('#tambahkategori #imgKate').attr('src','').addClass('d-none')
 
             $('#tambahkategori').modal('show')
         })
@@ -96,7 +96,7 @@
             $('#tambahkategori #id').val($(this).data('id'))
             $('#tambahkategori #nama_kategori').val($(this).data('nama'))
             $('#tambahkategori #url_foto').val('')
-            $('#tambahkategori #imgKate').attr('src',$(this).data('image'))
+            $('#tambahkategori #imgKate').attr('src',$(this).data('image')).removeClass('d-none')
             $('#tambahkategori').modal('show')
         })
 

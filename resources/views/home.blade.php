@@ -4,6 +4,9 @@
 @endsection
 
 @section('content')
+    <style>
+
+    </style>
 
     <section>
         <div style="height: 57px"></div>
@@ -115,7 +118,13 @@
 
                     $.each(data, function (key, value) {
                         var foto = value['get_image'].length > 0 ? value['get_image'][0]['url_foto'] : "{{asset('/static-image/noimage.jpg')}}";
+                        var stok = value['sisa'];
+                        var txtStok = 'Habis';
+                        if (stok > 0){
+                            txtStok = 'Stok : '+stok;
+                        }
                         produk.append('<div class="col-lg-3 col-md-6 col-sm-12">\n' +
+                            '                    <span class="spanStok">'+txtStok+'</span>' +
                             '                    <a class="cardku" href="/produk/detail/' + value['id'] + '">\n' +
                             '                        <img\n' +
                             '                            src="' + foto + '"/>\n' +

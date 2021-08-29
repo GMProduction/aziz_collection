@@ -126,6 +126,8 @@
                             if (xhr.status === 200) {
                                 swal("Data Updated ", {
                                     icon: "success",
+                                    buttons: false,
+                                    timer: 1000
                                 }).then((dat) => {
                                     window.location = window.location.pathname + '?id=' + data['data']['id'];
                                 });

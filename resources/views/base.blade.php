@@ -92,8 +92,7 @@
                                 <img class="profile-userpic" src="{{ asset('static-image/profile.png') }}" />
                             </a>
                             <div class="dropdown-menu  dropdown-menu-right">
-                                <a href="/{{ auth()->user()->roles }}" class="dropdown-item"
-                                    style="width: unset">Dashboard</a>
+                                <a href="/{{auth()->user()->roles == 'pimpinan' ? 'admin' : auth()->user()->roles}}" class="dropdown-item" style="width: unset">Dashboard</a>
                                 <a href="/logout" class="dropdown-item" style="width: unset">Logout</a>
                             </div>
                         </div>

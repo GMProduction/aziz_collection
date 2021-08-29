@@ -18,6 +18,17 @@ class ProdukController extends CustomController
     {
         $produk   = Produk::orderBy('created_at', 'DESC')->filter(\request(['produk','kategori']))->paginate(8)->withQueryString();
         $kategori = Kategori::where('nama_kategori', '=', \request('kategori'))->first();
+        foreach ($produk as $p){
+            $laku = Keranjang::with('getPesanan')->where('id_produk', '=', $p->id)->whereHas(
+                'getPesanan',
+                function ($q) {
+                    return $q->where('status_pesanan', '>=', 2);
+                }
+            )->sum('qty');
+            $sisa = (int) $p->stok - (int) $laku;
+            Arr::add($p,'sisa', $sisa);
+        }
+
         $data     = [
             'data'     => $produk,
             'kategori' => $kategori,
@@ -62,6 +73,16 @@ class ProdukController extends CustomController
 
     public function dataProduk(){
         $produk = Produk::filter(\request(['produk','kategori']))->orderBy('created_at','DESC')->limit(4)->get();
+        foreach ($produk as $p){
+            $laku = Keranjang::with('getPesanan')->where('id_produk', '=', $p->id)->whereHas(
+                'getPesanan',
+                function ($q) {
+                    return $q->where('status_pesanan', '>=', 2);
+                }
+            )->sum('qty');
+            $sisa = (int) $p->stok - (int) $laku;
+            Arr::add($p,'sisa', $sisa);
+        }
         return $produk;
     }
 }

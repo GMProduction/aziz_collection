@@ -210,6 +210,17 @@ a .nav-link {
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.spanStok {
+    position: relative;
+    top: 295px;
+    left: 20px;
+    background-color: red;
+    padding: 0 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.75rem;
+}
+
 .cardku .slick-prev:before,
 .cardku .slick-next:before {
   color: red !important;

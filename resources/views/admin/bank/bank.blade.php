@@ -100,7 +100,7 @@
             $('#tambahkategori #norek').val('')
             $('#tambahkategori #holder_bank').val('')
             $('#tambahkategori #url_gambar').val('')
-            $('#tambahkategori #imgBank').attr('src','')
+            $('#tambahkategori #imgBank').attr('src','').addClass('d-none')
 
             $('#tambahkategori').modal('show')
         })
@@ -111,7 +111,7 @@
             $('#tambahkategori #norek').val($(this).data('norek'))
             $('#tambahkategori #holder_bank').val($(this).data('holder'))
             $('#tambahkategori #url_gambar').val('')
-            $('#tambahkategori #imgBank').attr('src',$(this).data('image'))
+            $('#tambahkategori #imgBank').attr('src',$(this).data('image')).removeClass('d-none')
             $('#tambahkategori').modal('show')
         })
 

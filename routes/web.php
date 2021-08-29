@@ -79,6 +79,8 @@ Route::prefix('/admin')->middleware(AdminMiddleware::class)->group(function (){
 
     Route::get('/pelanggan', [MemberController::class,'index']);
     Route::get('/laporan', [LaporanController::class,'index']);
+    Route::get('/grafig-barang', [LaporanController::class,'grafig']);
+    Route::get('/grafig-barang-chart', [LaporanController::class,'getChart']);
 
     Route::match(['post','get'],'/baner', [BanerController::class,'index']);
     Route::get('/baner/{id}/delete', [BanerController::class,'delete']);

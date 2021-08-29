@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/myStyle.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}" type="text/css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
 
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet"/>
     <!-- custom css -->
@@ -41,39 +41,39 @@
             Hi, {{auth()->user()->nama}}
         </a>
 
-
         <a href="/admin" id="dashboard">
             <li href="#" class="nav-link t-white">
                 <i class="bx bxs-dashboard"></i>
                 <span class="mx-2">Dashboard</span>
             </li>
         </a>
+        @if(auth()->user()->roles == 'admin')
+            <a href="/admin/kategori" id="kategori">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Kategori</span>
+                </li>
+            </a>
+            <a href="/admin/produk" id="produk">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Produk</span>
+                </li>
+            </a>
+            <a href="/admin/bank" id="bank">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Bank</span>
+                </li>
+            </a>
 
-        <a href="/admin/kategori" id="kategori">
-            <li href="#" class="nav-link t-white">
-                <i class="bx bxs-cube"></i>
-                <span class="mx-2">Master Kategori</span>
-            </li>
-        </a>
-        <a href="/admin/produk" id="produk">
-            <li href="#" class="nav-link t-white">
-                <i class="bx bxs-cube"></i>
-                <span class="mx-2">Master Produk</span>
-            </li>
-        </a>
-        <a href="/admin/bank" id="bank">
-            <li href="#" class="nav-link t-white">
-                <i class="bx bxs-cube"></i>
-                <span class="mx-2">Master Bank</span>
-            </li>
-        </a>
-
-        <a href="/admin/baner" id="baner">
-            <li href="#" class="nav-link t-white">
-                <i class="bx bxs-cube"></i>
-                <span class="mx-2">Master Baner</span>
-            </li>
-        </a>
+            <a href="/admin/baner" id="baner">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-cube"></i>
+                    <span class="mx-2">Master Baner</span>
+                </li>
+            </a>
+        @endif
 
         <a href="/admin/pelanggan" id="pelanggan">
             <li href="#" class="nav-link t-white">
@@ -82,23 +82,27 @@
             </li>
 
         </a>
-
-
-        <a href="/admin/pesanan" id="pesanan">
-            <li href="#" class="nav-link t-white">
-                <i class="bx bxs-file"></i>
-                <span class="mx-2">Data Pesanan</span>
-            </li>
-
-        </a>
+        @if(auth()->user()->roles == 'admin')
+            <a href="/admin/pesanan" id="pesanan">
+                <li href="#" class="nav-link t-white">
+                    <i class="bx bxs-file"></i>
+                    <span class="mx-2">Data Pesanan</span>
+                </li>
+            </a>
+        @endif
         <a href="/admin/laporan" id="laporan">
             <li href="#" class="nav-link t-white">
                 <i class="bx bxs-file"></i>
                 <span class="mx-2">Data Laporan</span>
             </li>
-
         </a>
 
+        <a href="/admin/grafig-barang" id="grafig-barang">
+            <li href="#" class="nav-link t-white">
+                <i class='bx bx-bar-chart-alt-2'></i>
+                <span class="mx-2">Barang Terjual</span>
+            </li>
+        </a>
 
         <a href="/logout" class="mt-auto">
             <li href="#" class="nav-link t-white">

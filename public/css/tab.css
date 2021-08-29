@@ -161,7 +161,7 @@ body {
 }
 
 .nav-tabs>.nav-item>.nav-link.active {
-    background-color: #444;
+    background-color: #FA5130;
     border-radius: 30px;
     color: #FFFFFF;
 }
@@ -252,7 +252,7 @@ body {
   src: url("https://raw.githack.com/creativetimofficial/now-ui-kit/master/assets/fonts/nucleo-outline.woff2");
   font-weight: normal;
   font-style: normal;
-        
+
 }
 
 .now-ui-icons {
@@ -274,7 +274,7 @@ footer{
     padding: 25px;
     font-weight: 300;
     background: #f7f7f7;
-    
+
 }
 .footer p{
     margin-bottom: 0;
